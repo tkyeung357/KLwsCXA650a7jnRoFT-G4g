@@ -28,7 +28,7 @@ client
     
     client.use(tube_name, function(err, tubename) {
         console.log('using ' + tubename);
-        //put job to tube with 60s delay
+        //put job to tube 
         client.put(0, 0, 60, JSON.stringify([tubename, job]), function(err, jobid) {
             console.log('queued a job in ' + tubename + ' : id = ' + jobid);
         });
@@ -93,9 +93,18 @@ worker
 .on('job.handled', function(data) {
     console.log('job.handled');
     console.log(data);
-    if(counter === 10){
+    if(counter === 3){
         console.log('job handled 10 times, worker stop now');
+        console.log(data.id);
         worker.stop();
+        return;
+    }
+    
+    if(data.action === 'success') {
+        // success, reput job to tube and delay 60s
+        client.put(0, 60, 60, JSON.stringify([tube_name, job]), function(err, jobid) {
+            console.log('re-put a job in ' + tube_name + ' : id = ' + jobid);
+        });
     }
     
     console.log('job handled counter = ' + counter);

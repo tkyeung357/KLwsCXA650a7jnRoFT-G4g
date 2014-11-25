@@ -28,7 +28,7 @@ module.exports = function() {
                 }
                 console.log('data insert to xerate collection');
                 // success, reput job to tube and delay 60s
-                callback('release', 60);
+                callback('success');
                 return;
             });
         });
