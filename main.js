@@ -6,11 +6,7 @@ beanworker = require('fivebeans').worker;
 var host = 'challenge.aftership.net', 
 port = 11300,
 tube_name = 'tkyeung357',
-tube_list = ['tkyeung357'],
-payload = {
-    "from": "HKD",
-    "to": "USD"
-};
+tube_list = ['tkyeung357'];
 
 var job = { 
     type: 'tkyeung357', 
@@ -102,8 +98,6 @@ worker
         worker.stop();
     }
     
-    if(data.action === 'success') {
-    }
     console.log('job handled counter = ' + counter);
     counter++;
 })
