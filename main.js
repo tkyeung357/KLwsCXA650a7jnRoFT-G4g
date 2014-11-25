@@ -102,11 +102,3 @@ worker
     counter++;
 })
 .start(tube_list);
-
-/*
-client.list_tube_used(function(err, tubename) {
-    if(err)
-        console.log(err);
-    console.log(tubename);
-});
-*/

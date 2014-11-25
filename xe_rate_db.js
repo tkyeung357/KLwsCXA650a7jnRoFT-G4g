@@ -24,10 +24,3 @@ xe_rate_db.prototype.insertXeRate = function(data, callback) {
 }
 
 module.exports = xe_rate_db;
-/*
-    mongoClient.connect(url, function(err, db) {
-        asset.equal(null, err);
-        console.log('connected to db');
-        db.close();
-    });
-*/
