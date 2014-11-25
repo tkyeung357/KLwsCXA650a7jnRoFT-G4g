@@ -93,7 +93,7 @@ worker
 .on('job.handled', function(data) {
     console.log('job.handled');
     console.log(data);
-    if(counter === 3){
+    if(counter === 10){
         console.log('job handled 10 times, worker stop now');
         console.log(data.id);
         worker.stop();
