@@ -9,8 +9,8 @@ module.exports = {
         console.log('payload = ' + JSON.stringify(payload));
         
         var result = {
-            "from": "HKD",
-            "to": "USD",
+            "from": "",
+            "to": "",
             "created_at": null,
             "rate": "0.00"
         },
@@ -35,6 +35,8 @@ module.exports = {
                     status = true;
                     result.rate = rate;
                     result.created_at = new Date();
+                    result.from = from;
+                    result.to = to;
                 }
                 
             }
